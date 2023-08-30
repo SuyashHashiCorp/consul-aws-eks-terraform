@@ -1,78 +1,79 @@
 #EKS Cluster & Node Group Variables
 variable "aws_region" {
   type    = string
-  default = "us-west-1"
+  default = " "   # Update your region name here
 }
 
 variable "eks_cluster_name" {
   type    = string
-  default = "my-eks-cluster"
+  default = " "   # Name of your EKS Cluster
 }
 
 variable "k8s_version" {
   type    = string
-  default = "1.24" # Set your desired AWS region
+  default = " "  # Set your desired AWS region
 }
 
 variable "subnet_ids" {
   type    = list(string)
-  default = ["subnet-0832b93841ea01c95", "subnet-0a33cb553ff13f79d"]
+  default = [" ", " "]  # Set your Subnet IDs where the EKS cluster and NodeGroups will placed
 }
 
 variable "security_group" {
   type    = list(string)
-  default = ["sg-011a6bd1df78460df"]
+  default = [" "]  #  Set your Security Group IDs
 }
 
 variable "nodegroup_name" {
   type    = string
-  default = "my-node-group"
+  default = " "  # Name of your NodeGroup
 }
 
 variable "scaling" {
   type = map(number)
   default = {
-    "desired_size" = 3
-    "max_size"     = 5
-    "min_size"     = 1
+    "desired_size" = ...  # Set the desired number of Nodes in your Node Group
+    "max_size"     = ...  # Set the required maximum number of Nodes in your Node Group
+    "min_size"     = ...  # Set the required minimum number of Nodes in your Node Group
   }
 }
 
 #Helm Variables
 variable "chart_version" {
   type    = string
-  default = "1.2.0" # Use the desired Consul Helm chart version
+  default = " "  # Use the desired Consul Helm chart version
 }
 
 variable "namespace" {
   type    = string
-  default = "consul"
+  default = " "  # Set the name of your namespace where the Consul will be installed
 }
 
 variable "max_history" {
   type    = number
-  default = 20
+  default = ...  # Set the value for Maximum number of release versions stored per release
 }
 
 variable "timeout" {
   type    = number
-  default = 1200 #In Seconds 
+  default = ...  # Set the time in seconds to wait for any individual Kubernetes operation (like Jobs for hooks)
 }
 
 variable "vaules_file" {
   type    = string
-  default = "/Users/suyash/Projects/consul-aws-eks-terraform/templates/values.yaml"
+  default = " "  # Set the values.yaml filename along with path like - "<file_path>/values.yaml"
 }
 
 
 #EC2 Key Pair Variables
-variable "ec2_ssh_public_key" {
-  type        = string
-  description = "SSH key name that should be used to access the worker nodes"
-  default     = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCPE/bDCG6Lv65PgONOQrtjkC3EICrQpDTgZyZXLMChP3+imIR07lKh+FECmScldNmANbn/uLEymu/Tjc7LeTZYmE2iknnDGdIU6K5eGUfb9u+wm0GjPTwK7Qe/pfnZGQmQDYqDSveEJkoGMmU9LZDWSBVQgBqTpRN/buc6IvZVlSdwioLyQMoY/b7v5kM7dNphBCc3XmayU3E638SGYGFK9A9VBwUW7Zh76JlBxKCLrDJw7rVmJ3ecmsrKKXisrCCc1LzjVYHrDWYW6GUYpVkgelktMc7WZ63b1Flxg5brJ9Ftz55SoDqa/+GtSXumUonYY8Kjtt48CoVjyoxXHejv"
-}
 
 variable "ec2_ssh_key_name" {
   type    = string
-  default = "eks-nodes"
+  default = " "  # Set the name of your ec2 key pair
+}
+
+variable "ec2_ssh_public_key" {
+  type        = string
+  description = "SSH key name that should be used to access the worker nodes"
+  default     = " "  # Set the public key of your key_pair
 }
