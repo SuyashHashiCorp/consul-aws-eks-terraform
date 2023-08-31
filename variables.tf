@@ -1,7 +1,7 @@
 #EKS Cluster & Node Group Variables
 variable "aws_region" {
   type    = string
-  default = " "   # Update your region name here
+  default = " "   # Update your AWS Region name here
 }
 
 variable "eks_cluster_name" {
@@ -11,7 +11,7 @@ variable "eks_cluster_name" {
 
 variable "k8s_version" {
   type    = string
-  default = " "  # Set your desired AWS region
+  default = " "  # Set your desired K8s Version for your EKS cluster
 }
 
 variable "subnet_ids" {
