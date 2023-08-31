@@ -32,6 +32,16 @@ terraform plan
 terraform apply
 ```
 
+## Configure kubectl to talk to your cluster
+ 1. Config kubectl to talk to your EKS cluster
+```
+aws eks update-kubeconfig --region <region where you deployed your cluster> --name <your cluster name>
+```
+ 2. Run the below to verify you are connected to your Kubernetes cluster
+```
+kubectl cluster-info
+```
+
 ## To destroy the cluster, 
 ```shell
 terraform destroy -auto-approve
