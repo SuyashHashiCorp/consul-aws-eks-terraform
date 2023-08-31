@@ -19,9 +19,7 @@ Terraform code to install create EKS cluster using NodeGroup and install Consul 
 
 2. Update the values as per the below table in **variables.tf** file -
 
-<img src="file:///Users/suyash/Desktop/Screenshot%202023-08-31%20at%208.51.19%20AM.png" width="128"/>
-
-![alt text](file:///Users/suyash/Desktop/Screenshot%202023-08-31%20at%208.51.19%20AM.png)
+<img width="834" alt="variables changes" src="https://github.com/hashicorp/nomad/assets/92308220/ddbaf952-af07-440d-a008-eb622af582a6">
 
 
 ## Usage/Examples
